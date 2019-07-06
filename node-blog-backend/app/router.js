@@ -12,7 +12,6 @@ module.exports = app => {
 
     /* Blog Post Routes */
     blogPostRoutes.post('/', BlogController.publishPost);
-
-
+    
     app.use('/api', apiRoutes);
 };
