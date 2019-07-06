@@ -1,0 +1,33 @@
+{
+  "name": "blog-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --timeout 9999 --exit",
+    "dev": "nodemon --exec babel-node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanpablomarin/node-blog-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanpablomarin/node-blog-project/issues"
+  },
+  "homepage": "https://github.com/juanpablomarin/node-blog-project#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "1.18.2",
+    "express": "4.16.3",
+    "mongoose": "5.0.16"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "mocha": "5.1.1",
+    "nodemon": "^1.17.3"
+  }
+}
