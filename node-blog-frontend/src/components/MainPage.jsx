@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
-/*comment*/
+import styled from 'styled-components';
+
+const MainContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    font-family: monospace;
+`;
+
 class MainPage extends Component {
 
     render() {
         return (
-            <div>
-                Hello World!
-            </div>
+            <MainContainer>
+            </MainContainer>
         );
     }
 
