@@ -1,9 +1,13 @@
 import axios from "axios";
+const URL = "http://localhost:8080/api/"
 
-export const getInitialNavbarSections = () => {
+
+export const getInitialNavbarSections = async () => {
   const getData = {};
 
-  return axios
-    .get("api/sections/", { params: getData })
-    .then(response => response.data);
+  const response = await axios
+    .get(URL + "sections/", { params: getData });
+    console.log("Here!");
+    console.log(response.data);
+  return response.data;
 };

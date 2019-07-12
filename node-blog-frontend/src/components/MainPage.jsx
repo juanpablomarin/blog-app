@@ -1,30 +1,58 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { getInitialNavbarSections } from "../repository";
-import Navbar from "./Navbar";
+import NavigationBar from "./NavigationBar";
+import ContentPage from "./ContentPage"
+import { Spinner } from "react-bootstrap";
 
-const MainContainer = styled.div`
-  display: flex;
-  justify-content: center;
+const HeaderContainer = styled.div`
+  display: block;
   font-family: monospace;
+`;
+
+const BodyContainer = styled.div`
+  display: flex;
 `;
 
 class MainPage extends Component {
   state = {
-    initialState: {}
+    sections: [],
+    isLoading: false,
+    contentPage: "welcome"
   };
 
   componentDidMount() {
-    this.setState({ initialState: getInitialNavbarSections() });
+    this.setState({
+      isLoading: true
+    });
+
+    getInitialNavbarSections().then(data =>
+      this.setState({ sections: data, isLoading: false })
+    );
+  }
+
+  setContentPage = (content) =>  {
+    this.setState({
+      contentPage: content
+    });
   }
 
   render() {
-    const { initialState } = this.state;
+    const { isLoading, sections, contentPage } = this.state;
 
     return (
-      <MainContainer>
-        <Navbar initialState={initialState} />
-      </MainContainer>
+      <div>
+      <HeaderContainer>
+        {isLoading ? (
+          <Spinner animation="border" role="status" />
+        ) : (
+          <NavigationBar setContentPage={this.setContentPage} sections={sections} />
+        )}
+      </HeaderContainer>
+      <BodyContainer>
+          <ContentPage content={contentPage} />
+      </BodyContainer>
+      </div>
     );
   }
 }

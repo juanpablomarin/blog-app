@@ -10,6 +10,11 @@ module.exports = app => {
     const sectionRoutes = express.Router();
 
     /* Middleware */
+    app.use(function(req, res, next) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        next();
+      });
     apiRoutes.use('/blogPosts', blogPostRoutes);
     apiRoutes.use('/sections', sectionRoutes);
 
@@ -18,6 +23,6 @@ module.exports = app => {
     /* Blog Post Routes */
     blogPostRoutes.post('/', BlogController.publishPost);
 
-    
+
     app.use('/api', apiRoutes);
 };
