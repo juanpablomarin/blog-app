@@ -3,15 +3,17 @@ import styled from "styled-components";
 import { getInitialNavbarSections } from "../repository";
 import NavigationBar from "./NavigationBar";
 import ContentPage from "./ContentPage"
+import '../assets/assets.css'
 import { Spinner } from "react-bootstrap";
 
 const HeaderContainer = styled.div`
   display: block;
-  font-family: monospace;
+  font-family: Ubuntu, sans-serif;
 `;
 
 const BodyContainer = styled.div`
   display: flex;
+  font-family: Ubuntu, sans-serif;
 `;
 
 class MainPage extends Component {

@@ -35,7 +35,7 @@ class NavigationBar extends Component {
       <NavbarContainer>
         {sections.map(section => {
           return (
-            <NavItem onClick={() => this.props.setContentPage(section.key)}>
+            <NavItem key={section.key} onClick={() => this.props.setContentPage(section.key)}>
               <NavLink eventKey={section.key}>{section.text}</NavLink>
             </NavItem>
           );
