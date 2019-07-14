@@ -1,11 +1,15 @@
 import React, { Component } from "react";
-import { Form } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import { PropTypes } from "prop-types";
 import styled from "styled-components";
 
 const FormContainer = styled.div`
   display: flex;
   margin: 5px;
+`;
+
+const FormButton = styled(Button)`
+    display: block;
 `;
 
 const FormLabel = styled(Form.Label)`
@@ -40,6 +44,7 @@ class ContentPage extends Component {
             <SingleLineTextEntry />
             <FormLabel> Blog Text </FormLabel>
             <LargeContentTextArea as="textarea" rows="5"/>
+            <FormButton> Publish Post </FormButton> 
           </Form.Group>
         </Form>
       </FormContainer>
