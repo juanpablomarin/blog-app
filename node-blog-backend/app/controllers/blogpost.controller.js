@@ -2,6 +2,9 @@
 const BlogPost = require('../models/blogpost.model');
 
 exports.publishPost = (request, response) => {
+
+    // TODO: Include a way to start processing response bodies
+
     const NewBlogPost = new BlogPost(request.body);
     NewBlogPost.save((err, blogPost) => {
         if (err) {
