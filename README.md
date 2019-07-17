@@ -34,6 +34,10 @@ This includes, *Express*. Why Node.js? My first reason I can think of is syntax,
 
 A NoSQL database seems to be the typical choice of database when it comes to Node.js related applcations, and so many tutorials/resources always seem to be used with MongoDB. Though, I'm not feeling too strong about continuing with MongoDB, however a SQL-based language does tend to be a pain with queries and data consistency. So it seemed going NoSQL was the lesser of the two evils here, but this may just my own prejudices against SQL.
 
+#### Chai
+
+"Test early, test often". Having a testing framework there, to test API endpoints will definitely help proving that your code is correct. (Goodbye Proofs of Program Correctness). Tests will also help in the discovery of bugs, ensuring your code is good! That's why I chose Chai - honestly it was the first library I saw I could use with node.js so I just hopped on it.
+
 
 ## Prerequisites
 I'll be going into more detail into each of the front-end/back-end readme.md for setup/requirements.
