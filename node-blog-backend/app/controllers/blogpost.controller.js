@@ -3,9 +3,9 @@ const BlogPost = require('../models/blogpost.model');
 
 exports.publishPost = (request, response) => {
 
-    // TODO: Include a way to start processing response bodies
-
-    const NewBlogPost = new BlogPost(request.body);
+    const blogPostData = request.body.params;
+    const NewBlogPost = new BlogPost(blogPostData);
+    
     NewBlogPost.save((err, blogPost) => {
         if (err) {
             return response.status(422).json({

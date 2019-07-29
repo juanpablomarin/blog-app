@@ -39,11 +39,11 @@ class ContentPage extends Component {
 
   state = {
     blogText: null,
-    titleText: null
+    titleText: null,
+    toastMessage: ""
   };
 
   // TODO: Validation Errors
-  
   handleTitleChange = event => {
     this.setState({
       titleText: event.target.value
@@ -61,28 +61,32 @@ class ContentPage extends Component {
     const url = generateURL({ title: titleText });
     const request = { title: titleText, body: blogText, url: url };
 
-    publishPost(request).then(response => console.log(response));
+    publishPost(request);
   };
 
   render() {
     return (
-      <FormContainer>
-        <Form>
-          <Form.Group controlId="publishPost">
-            <FormLabel>Title</FormLabel>
-            <SingleLineTextEntry
-              onChange={event => this.handleTitleChange(event)}
-            />
-            <FormLabel> Blog Text </FormLabel>
-            <LargeContentTextArea
-              as="textarea"
-              rows="5"
-              onChange={event => this.handleBlogTextChange(event)}
-            />
-            <FormButton onClick={this.handlePublishPostClick}> Publish Post </FormButton>
-          </Form.Group>
-        </Form>
-      </FormContainer>
+      <div>
+        <FormContainer>
+          <Form>
+            <Form.Group controlId="publishPost">
+              <FormLabel>Title</FormLabel>
+              <SingleLineTextEntry
+                onChange={event => this.handleTitleChange(event)}
+              />
+              <FormLabel>Blog Text</FormLabel>
+              <LargeContentTextArea
+                as="textarea"
+                rows="5"
+                onChange={event => this.handleBlogTextChange(event)}
+              />
+              <FormButton variant="primary" onClick={this.handlePublishPostClick}>
+                Publish Post
+              </FormButton>
+            </Form.Group>
+          </Form>
+        </FormContainer>
+      </div>
     );
   }
 }
