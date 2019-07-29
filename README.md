@@ -38,6 +38,10 @@ A NoSQL database seems to be the typical choice of database when it comes to Nod
 
 "Test early, test often". Having a testing framework there, to test API endpoints will definitely help proving that your code is correct. (Goodbye Proofs of Program Correctness). Tests will also help in the discovery of bugs, ensuring your code is good! That's why I chose Chai - honestly it was the first library I saw I could use with node.js so I just hopped on it.
 
+## Branching Strategy
+
+At first I wanted to push everything to master, but there's something really wrong with that. We always want master to be the cleanest branch there is, and that anything that is deployed from master is always the best state of the code, no bugs, no dirty and unorganized code. Currently, master is in a state of disarray, but over the next few commits, I'll be cleaning up master, or doing a large overhaul of master soon. For now, the working branch will be under working-branch, and we'll use git flow to organize branches. feature/* is where most branches should be living off of.
+
 
 ## Prerequisites
 I'll be going into more detail into each of the front-end/back-end readme.md for setup/requirements.
