@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import MainPage from "./components/MainPage";
+import BasePage from './components/BasePage.js'
 
-ReactDOM.render(<MainPage />, document.getElementById("root"));
+ReactDOM.render(<BasePage />, document.getElementById("root"));
