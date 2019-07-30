@@ -22,7 +22,7 @@ Some of the libraries currently in use alongside React are:
 
 - styled-components: Easily implement CSS into react components
 - axios: For making API calls
-- react-bootstrap: For already available react components
+- material-ui: For already available react components
 
 ### Back-End Technologies
 
